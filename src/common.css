@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'DungGeunMo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: #fff;
+    font-family: 'DungGeunMo';
+}
+#root{
+    width: 100%;
+    height: 100%;
+}
+#wrap {
+    width: 100%;
+    height: 100%;
+}
+.main_text{
+    height: 450px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin: auto;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+}
+.main_text h1{
+    position: relative;
+    z-index: 1;
+}
+.main_text h1 img {
+    transform: translateX(-40px);
+}
+.main_text p {
+    position: relative;
+    margin-top: -20px;
+    font-size: 24px;
+    z-index: 2;
+}

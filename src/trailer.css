@@ -1,0 +1,41 @@
+.btn_box {
+    width: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: fixed;
+    left: 0;
+    bottom: 64px;
+    z-index: 4;
+    right: 0;
+}
+button {
+    color: #fff;
+    font-size: 0;
+    cursor: pointer;
+}
+/* 이전, 다음 버튼 */
+.prev svg,
+.next svg {
+    width: 16px;
+    font-size: 28px;
+}
+/* 음소거 */
+.mute {
+    font-size: 0;
+    margin-right: 20px;
+}
+.mute svg {
+    display: inline-block;
+    margin-top: 2px;
+    font-size: 32px;
+}
+
+/* Channel */
+.btn_box h2 {
+    font-size: 48px;
+    margin: 0 24px 0 20px;
+}
+
+/* 유튜브 영상 */

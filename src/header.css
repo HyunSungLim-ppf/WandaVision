@@ -1,32 +1,28 @@
 .svg {
     max-height: 40px;
 }
-
-/* 좌측 상단 */
+/* 좌측상단 */
 .camera_scroll {
     width: 200px;
     display: flex;
     justify-content: space-between;
-    font-size: 40px;
+    font-size: 48px;
     position: fixed;
     left: 120px;
     top: 52px;
     z-index: 3;
 }
-
 .camera_scroll .scroll_box {
     width: 136px;
     height: 36px;
-    border: 2px solid #e2eddd;
+    border: 2px solid #e2e0dd;
     margin: 8px 8px 0;
     position: relative;
 }
-
 .camera_scroll .scroll_box .scroll_bar {
     width: 6px;
     height: 34px;
-    /* background-color: #e2eddd; */
-    background-color: red;
+    background-color: #e2e0dd;
     position: absolute;
     left: 0;
     top: 0;
@@ -40,7 +36,6 @@
     top: 60px;
     z-index: 3;
 }
-
 .camera_info .info_icon {
     display: flex;
     width: 112px;
@@ -48,11 +43,9 @@
     align-items: center;
     margin: 0 0 0 auto;
 }
-
 .camera_info .info_icon .info_battery {
     height: 20px;
 }
-
 .camera_info .info_icon .info_play {
     height: 24px;
 }
@@ -62,66 +55,30 @@
     margin-top: 24px;
     font-size: 48px;
 }
-
 .camera_info .info_recordTime .random_time::before {
     display: inline-block;
     content: "00";
     animation: randomTime 1s infinite linear;
 }
-
-.camera_info .info_recordTime .random_time:nth-child(2):before {
+.camera_info .info_recordTime .random_time:nth-child(1):before {
     animation-delay: 1.7s;
 }
-
-.camera_info .info_recordTime .random_time:nth-child(3):before {
+.camera_info .info_recordTime .random_time:nth-child(2):before {
     animation-delay: 0.4s;
 }
-
-/* 랜덤 숫자 애니메이션  */
+/* 랜덤 숫자 애니메이션 */
 @keyframes randomTime {
-    0% {
-        content: "03";
-    }
-
-    10% {
-        content: "12";
-    }
-
-    20% {
-        content: "27";
-    }
-
-    30% {
-        content: "38";
-    }
-
-    40% {
-        content: "43";
-    }
-
-    50% {
-        content: "59";
-    }
-
-    60% {
-        content: "67";
-    }
-
-    70% {
-        content: "71";
-    }
-
-    80% {
-        content: "85";
-    }
-
-    90% {
-        content: "91";
-    }
-
-    100% {
-        content: "99";
-    }
+    0% { content: "03";}
+    10% { content: "12";}
+    20% { content: "27";}
+    30% { content: "36";}
+    40% { content: "43";}
+    50% { content: "56";}
+    60% { content: "67";}
+    70% { content: "71";}
+    80% { content: "85";}
+    90% { content: "91";}
+    100% { content: "99";}
 }
 
 /* 용량 시간 */
@@ -132,15 +89,15 @@
     justify-content: space-between;
     font-size: 36px;
 }
-.info_capacity .info_disk{
+.info_capacity .info_disk {
     height: 34px;
 }
-.info_capacity .disk_text{
+.info_capacity .disk_text {
     margin-right: 8px;
 }
 
-/* 우측하단 = 현재시간 */
-.camera_time{
+/* 우측 하단 현재시간 */
+.camera_time {
     position: fixed;
     right: 120px;
     bottom: 64px;
@@ -148,39 +105,56 @@
     font-size: 48px;
 }
 .camera_time .colon_blink {
-    animation: colon 2s infinite;
+    animation: colon 2s infinite ease;
 }
 /* 현재시간 애니메이션 */
 @keyframes colon {
-    0% {opacity: 1;}
-    50% {opacity: 0;}
-    100% {opacity: 1;}
+    0% { opacity: 1;}
+    50% { opacity: 0;}
+    100% { opacity: 1;}
 }
 
 /* Header */
-header{
+header {
     position: fixed;
     left: 120px;
     bottom: 60px;
     z-index: 3;
     font-size: 20px;
 }
-header .gnb{
+header .gnb {
     margin-bottom: 16px;
+    visibility: hidden;
+    opacity: 0;
     transform: translateY(20px);
+    transition: opacity .5s, visibility .5s, transform .5s;
 }
-/* 폴더 아이콘  */
-.folder{
+header .gnb li {
+    width: 144px;
+    height: 48px;
+    border: 2px solid #e2e0dd;
+    line-height: 44px;
+    text-align: center;
+}
+header .gnb li:not(:last-child) {
+    border-bottom: none;
+}
+header .gnb li:last-child {
+    text-decoration: underline;
+}
+
+/* 폴더 아이콘 */
+.folder {
     width: 48px;
     height: 40px;
     cursor: pointer;
     position: relative;
     z-index: 3;
 }
-.folder .file{
+.folder .file {
     position: absolute;
-    bottom: 6px;
     left: 6px;
+    bottom: 6px;
     z-index: 3;
     width: 30px;
     height: 24px;
@@ -190,8 +164,16 @@ header .gnb{
     transition: opacity 0.3s, transform 0.5s;
 }
 
-
-
-
-
-
+/* GNB Button */
+input[id="gnbBtn"] {
+    display: none;
+}
+input[id="gnbBtn"]:checked ~ .gnb {
+    transform: translateY(0px);
+    visibility: visible;
+    opacity: 1;
+}
+input[id="gnbBtn"]:checked ~ button .file {
+    transform: translateY(-20px);
+    opacity: 0;
+}
