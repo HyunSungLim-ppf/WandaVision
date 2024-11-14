@@ -120,6 +120,9 @@ function Header() {
             <Link to="/sysnopsis">Synopsis</Link>
           </li>
           <li>
+            <Link to="/custom">Custom</Link>
+          </li>
+          <li>
             <a
               href="https://www.disneyplus.com/ko-kr/home"
               target="_blank"
